@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<HTML>
-	<HEAD>
-		<TITLE>Calculo IMC</TITLE>
-    <link rel="stylesheet" href="src/css/stylesgaby.css">
-  
-	</HEAD>
-	<BODY>
-		<center>
-      <h1 style="color: #f706af;" >insertá tu altura en metros y tu peso en kg</h1>
-     
-    <form action="" onsubmit="calcular_imc(event)">
-			<input type="number" name="altura" id="altura" onchange="calcular_imc(event)">
-			<input type="number" name="peso" id="peso" onchange="calcular_imc(event)">
-			<button type="submit" button style="color:rgba(80, 77, 76, 0.568)">calcular peso </button>
-    
-		</form>
-  </center>
-<center>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo IMC</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Insertá tu altura en metros y tu peso en kg</h1>
+      <form action="" onsubmit="calcular_imc(event)">
+        <input type="number" name="altura" id="altura" onchange="calcular_imc(event)" placeholder="Altura (metros)" required>
+        <input type="number" name="peso" id="peso" onchange="calcular_imc(event)" placeholder="Peso (kg)" required>
+        <button type="submit">Calcular IMC</button>
+      </form>
 
- <p style="font-size: larger ; color: #f70606;">
-	El índice de masa corporal (IMC) es la relación entre la masa corporal de una persona y su estatura. Según los valores propuestos por la Organización Mundial de la Salud (OMS), el IMC es uno de los principales recursos para evaluar el estado nutricional.
- </p>
+      <p>
+        El índice de masa corporal (IMC) es la relación entre la masa corporal de una persona y su estatura. Según los valores propuestos por la Organización Mundial de la Salud (OMS), el IMC es uno de los principales recursos para evaluar el estado nutricional.
+      </p>
 
-		<h2 id="resu"></h2>
-  </center>
-			<SCRIPT type="text/javascript">
+      <h2 id="resu"></h2>
+    </div>
 
-			function calcular_imc(event) {
-				event.preventDefault();
-				var altura;
-				var peso;
-				altura = document.getElementById("altura").value;
-				peso = document.getElementById("peso").value;
-			
-				document.getElementById("resu").innerText = peso/(altura*altura);					
-			}
-			
-		</SCRIPT>
-	</BODY>
-</HTML>
+    <script type="text/javascript">
+      function calcular_imc(event) {
+        event.preventDefault();
+        var altura = document.getElementById("altura").value;
+        var peso = document.getElementById("peso").value;
+
+        if (altura && peso) {
+          var imc = peso / (altura * altura);
+          document.getElementById("resu").innerText = "Tu IMC es: " + imc.toFixed(2);
+        } else {
+          document.getElementById("resu").innerText = "Por favor, ingresa todos los datos.";
+        }
+      }
+    </script>
+  </body>
+</html>
