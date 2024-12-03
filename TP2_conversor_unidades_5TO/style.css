@@ -1,65 +1,99 @@
+* Estilo general */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background: radial-gradient(circle, #6dd5ed, #2193b0);
+    color: #333;
 }
 
+/* Contenedor principal */
 .container {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transition: transform 0.3s ease;
 }
 
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Título */
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    color: #2193b0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
+/* Grupo de entrada */
 .input-group, .output-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
+/* Etiquetas */
 label {
-    font-size: 18px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
 }
 
+/* Entrada de texto y selector */
 input, select {
-    padding: 10px;
-    font-size: 16px;
-    width: 200px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
 }
 
+input:focus, select:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 8px rgba(33, 147, 176, 0.2);
+    outline: none;
+}
+
+/* Botón */
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
     color: white;
-    background-color: #007bff;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    transform: scale(1.05);
 }
 
+/* Resultado */
 .output-group p {
-    font-size: 18px;
+    font-size: 16px;
+    color: #444;
     margin: 0;
 }
 
 #result {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 5px;
+    font-weight: 600;
+    color: #2193b0;
 }
